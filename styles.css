@@ -53,13 +53,14 @@ body {
 }
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-logo-wrap {
-  width: 38px; height: 38px; border-radius: 50%;
+  width: 52px; height: 52px; border-radius: 50%;
   background: #fff;
-  border: 1.5px solid var(--gold);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 12px rgba(184,142,51,0.3);
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.nav-logo-img { width: 30px; height: 30px; object-fit: contain; }
+.nav-logo-img { width: 42px; height: 42px; object-fit: contain; }
 .nav-brand-text { display: flex; flex-direction: column; }
 .nav-p2 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--text); }
 .nav-ps { font-size: 10px; color: var(--gold); letter-spacing: 0.05em; }
@@ -100,6 +101,31 @@ body {
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
 }
 .hero-inner { position: relative; padding: 5rem 0; }
+/* Hero Institute Logo Block */
+.hero-institute {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-logo-wrap {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 40px rgba(184,142,51,0.35), 0 0 80px rgba(184,142,51,0.15);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; flex-shrink: 0;
+}
+.hero-logo-img { width: 96px; height: 96px; object-fit: contain; }
+.hero-institute-text { display: flex; flex-direction: column; gap: 0.3rem; }
+.hero-institute-name {
+  font-size: 1.05rem; font-weight: 800;
+  letter-spacing: 0.18em; color: var(--gold);
+  text-transform: uppercase; font-family: var(--sans);
+}
+.hero-institute-sub {
+  font-size: 0.78rem; letter-spacing: 0.14em;
+  color: var(--text-dim); text-transform: uppercase;
+}
+
 .hero-eyebrow {
   display: flex; align-items: center; gap: 8px;
   font-size: 11px; letter-spacing: 0.12em; color: var(--text-dim);
