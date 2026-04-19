@@ -125,6 +125,16 @@ body {
   font-size: 0.78rem; letter-spacing: 0.14em;
   color: var(--text-dim); text-transform: uppercase;
 }
+.hero-institute-tagline {
+  font-size: 1rem; font-weight: 600;
+  color: var(--text); margin-top: 0.4rem;
+  font-style: italic; letter-spacing: 0.01em;
+}
+.hero-institute-meta {
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  color: var(--text-dim); text-transform: uppercase;
+  margin-top: 0.15rem; font-family: var(--mono);
+}
 
 .hero-eyebrow {
   display: flex; align-items: center; gap: 8px;
