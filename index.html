@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P2 Labs | Perfect Squared Inc.</title>
+  <meta name="description" content="P2 Labs — Quantum-secure defense technology. QUANTA Platform: post-quantum cryptography compliance for the defense industrial base." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo-wrap">
+          <img src="assets/perfect_squared_logo.png" alt="P2 Labs" class="nav-logo-img" />
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-p2">P2 LABS</span>
+          <span class="nav-ps">Perfect Squared Inc.</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#quanta">QUANTA</a>
+        <a href="#threat-index">Threat Index</a>
+        <a href="#seraphim">Seraphim</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Book a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-inner">
+      <div class="hero-eyebrow">
+        <span class="dot critical"></span>
+        NSM-10 Mandate · 2035 Deadline · Active Threat
+      </div>
+      <h1 class="hero-headline">
+        Is your organization<br/>
+        <span class="gold">quantum-ready?</span>
+      </h1>
+      <p class="hero-sub">
+        Nation-state adversaries are harvesting your encrypted data <em>today</em>.<br/>
+        When quantum computers arrive, they decrypt it. The clock is running.
+      </p>
+      <div class="hero-score-demo">
+        <div class="score-label">QUANTA SCORE™</div>
+        <div class="score-display">
+          <div class="score-bar-wrap">
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width:45%"></div>
+            </div>
+            <div class="score-number">45<span>/100</span></div>
+          </div>
+          <div class="score-verdict critical-text">VULNERABLE — HNDL EXPOSED</div>
+          <div class="score-caption">Industry average across 10 scanned defense contractors</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get Your QUANTA Score</a>
+        <a href="#quanta" class="btn-ghost">See the Platform →</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">SDVOSB</span>
+        <span class="badge">CAGE 12GD0</span>
+        <span class="badge">FIPS 203/204/205</span>
+        <span class="badge">NSM-10 Aligned</span>
+        <span class="badge">Patent Pending</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THREAT BANNER ─────────────────────────────────────────────────────── -->
+  <section class="threat-banner">
+    <div class="container">
+      <div class="threat-grid">
+        <div class="threat-stat">
+          <div class="threat-number">100<span>%</span></div>
+          <div class="threat-label">of scanned DIB contractors are HNDL exposed</div>
+        </div>
+        <div class="threat-divider"></div>
+        <div class="threat-stat">
+          <div class="threat-number">2035</div>
+          <div class="threat-label">NSM-10 hard deadline for PQC migration</div>
+        </div>
+        <div class="threat-divider"></div>
+        <div class="threat-stat">
+          <div class="threat-number">45<span>/100</span></div>
+          <div class="threat-label">Average QUANTA Score across the defense industrial base</div>
+        </div>
+        <div class="threat-divider"></div>
+        <div class="threat-stat">
+          <div class="threat-number">$200K<span>+</span></div>
+          <div class="threat-label">What big firms charge. We start at $7,500.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROBLEM ───────────────────────────────────────────────────────────── -->
+  <section class="section problem" id="problem">
+    <div class="container">
+      <div class="section-eyebrow">The Threat</div>
+      <h2 class="section-title">Harvest Now,<br/><span class="gold">Decrypt Later</span></h2>
+      <p class="section-sub">
+        Nation-state adversaries — confirmed by NSA and CISA — are intercepting and storing
+        encrypted traffic from defense contractors <strong>right now</strong>.
+        They don't need to break the encryption today. They're waiting for a
+        cryptographically relevant quantum computer. When it arrives, every RSA and
+        elliptic-curve-protected secret you've ever transmitted becomes readable.
+      </p>
+      <div class="threat-cards">
+        <div class="threat-card">
+          <div class="tc-icon">⚡</div>
+          <div class="tc-name">Shor's Algorithm</div>
+          <div class="tc-desc">Breaks RSA and all elliptic curve cryptography completely on a quantum computer. Every TLS certificate, VPN, and PIV card using these algorithms is vulnerable.</div>
+          <div class="tc-status critical-text">CRITICAL</div>
+        </div>
+        <div class="threat-card">
+          <div class="tc-icon">🌊</div>
+          <div class="tc-name">Harvest Now, Decrypt Later</div>
+          <div class="tc-desc">Adversaries are collecting your encrypted traffic today. The attack happens now. The decryption happens when quantum computers arrive — 2030–2035.</div>
+          <div class="tc-status critical-text">ACTIVE NOW</div>
+        </div>
+        <div class="threat-card">
+          <div class="tc-icon">🔓</div>
+          <div class="tc-name">Grover's Algorithm</div>
+          <div class="tc-desc">Halves the effective key length of symmetric encryption. AES-128 becomes effectively AES-64. Symmetric systems need to double their key lengths.</div>
+          <div class="tc-status high-text">HIGH</div>
+        </div>
+        <div class="threat-card">
+          <div class="tc-icon">📜</div>
+          <div class="tc-name">Certificate Vulnerability</div>
+          <div class="tc-desc">X.509 certificates using RSA or ECDSA signatures will be forgeable by a CRQC. Every HTTPS connection becomes untrustworthy. PKI infrastructure must be rebuilt.</div>
+          <div class="tc-status high-text">HIGH</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUANTA PLATFORM ──────────────────────────────────────────────────── -->
+  <section class="section quanta-section" id="quanta">
+    <div class="quanta-bg"></div>
+    <div class="container">
+      <div class="section-eyebrow">The Solution</div>
+      <h2 class="section-title">QUANTA Platform</h2>
+      <p class="section-sub-sm">
+        Quantum-Aware Unified Network for Trusted Algorithms<br/>
+        Developed by Perfect Squared Inc. | P2 Labs
+      </p>
+      <div class="quanta-inner">
+        <div class="quanta-left">
+          <div class="quanta-what">
+            <h3>What QUANTA does</h3>
+            <p>QUANTA scans your TLS endpoints, certificates, source code, and dependencies against NIST FIPS 203/204/205 standards. Same day — you get a full audit-ready report, a Cryptographic Bill of Materials, and a remediation roadmap.</p>
+          </div>
+          <div class="deliverables">
+            <div class="deliverable">
+              <span class="del-icon">✓</span>
+              <div>
+                <strong>QUANTA Score (0–100)</strong>
+                <span>NIST-aligned quantum readiness rating</span>
+              </div>
+            </div>
+            <div class="deliverable">
+              <span class="del-icon">✓</span>
+              <div>
+                <strong>Cryptographic Bill of Materials</strong>
+                <span>CycloneDX v1.6 — CISA/NSA accepted format</span>
+              </div>
+            </div>
+            <div class="deliverable">
+              <span class="del-icon">✓</span>
+              <div>
+                <strong>NIST Gap Analysis</strong>
+                <span>Specific findings mapped to FIPS 203/204/205</span>
+              </div>
+            </div>
+            <div class="deliverable">
+              <span class="del-icon">✓</span>
+              <div>
+                <strong>Branded PDF Report</strong>
+                <span>Ready for your AO, prime, or CMMC assessor</span>
+              </div>
+            </div>
+            <div class="deliverable">
+              <span class="del-icon">✓</span>
+              <div>
+                <strong>Remediation Implementation</strong>
+                <span>We don't just find the gaps — we fix them</span>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-strip">
+            <div class="price-tier">
+              <div class="price-name">Assessment</div>
+              <div class="price-amount">$7,500</div>
+              <div class="price-desc">Scan + CBOM + report</div>
+            </div>
+            <div class="price-tier featured">
+              <div class="price-name">Assessment + Remediation</div>
+              <div class="price-amount">$25K–$50K</div>
+              <div class="price-desc">We implement the fixes</div>
+            </div>
+            <div class="price-tier">
+              <div class="price-name">Managed PQC</div>
+              <div class="price-amount">$5K–$10K<span>/mo</span></div>
+              <div class="price-desc">Ongoing monitoring</div>
+            </div>
+          </div>
+        </div>
+        <div class="quanta-right">
+          <div class="products-label">QUANTA Products</div>
+          <div class="products-stack">
+            <div class="product-card">
+              <div class="prod-header">
+                <span class="prod-name">QUANTA-PULSE</span>
+                <span class="prod-badge patent">PATENT PENDING</span>
+              </div>
+              <p>Symbolic agent swarms for quantum-secure telemetry. Radar spoof detection using PQC-protected signal channels. USPTO #63/805,300.</p>
+            </div>
+            <div class="product-card">
+              <div class="prod-header">
+                <span class="prod-name">QUANTA-VIGIL</span>
+                <span class="prod-badge active">ACTIVE</span>
+              </div>
+              <p>Autonomous defense integrity monitoring. Real-time system state classification: SECURE → DEGRADED → BREACHED → RESTORING.</p>
+            </div>
+            <div class="product-card">
+              <div class="prod-header">
+                <span class="prod-name">QUANTA-RAD</span>
+                <span class="prod-badge active">ACTIVE</span>
+              </div>
+              <p>RF and signal anomaly detection. Quantum-aware spectrum intelligence for signal classification and hostile emitter identification.</p>
+            </div>
+            <div class="product-card">
+              <div class="prod-header">
+                <span class="prod-name">QUANTA-SRD</span>
+                <span class="prod-badge dev">IN DEVELOPMENT</span>
+              </div>
+              <p>Quantum channel threat resolution via LEO satellites. Space-based signal deconfliction and PQC-secured downlink.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THREAT INDEX ──────────────────────────────────────────────────────── -->
+  <section class="section threat-index-section" id="threat-index">
+    <div class="container">
+      <div class="section-eyebrow">Intelligence</div>
+      <h2 class="section-title">QUANTA Threat Index</h2>
+      <p class="section-sub">
+        Every quarter, P2 Labs scans the public TLS infrastructure of defense contractors
+        and publishes the findings. No company is singled out — this is an industry baseline.
+        The data speaks for itself.
+      </p>
+      <div class="index-findings">
+        <div class="finding-headline">
+          Q2 2026 — Initial Scan: 10 Defense Contractors
+        </div>
+        <div class="index-table">
+          <div class="index-row header">
+            <span>Organization Tier</span>
+            <span>QUANTA Score</span>
+            <span>Risk Level</span>
+            <span>HNDL Exposed</span>
+          </div>
+          <div class="index-row">
+            <span>Major Defense Prime ($7B+)</span>
+            <span class="score-cell critical-text">35/100</span>
+            <span><span class="risk-badge critical">CRITICAL</span></span>
+            <span class="exposed">⚠ YES</span>
+          </div>
+          <div class="index-row">
+            <span>Mid-Tier Prime</span>
+            <span class="score-cell high-text">40/100</span>
+            <span><span class="risk-badge high">VULNERABLE</span></span>
+            <span class="exposed">⚠ YES</span>
+          </div>
+          <div class="index-row">
+            <span>Cybersecurity Services</span>
+            <span class="score-cell high-text">45/100</span>
+            <span><span class="risk-badge high">VULNERABLE</span></span>
+            <span class="exposed">⚠ YES</span>
+          </div>
+          <div class="index-row">
+            <span>IT Services / RMF</span>
+            <span class="score-cell high-text">45/100</span>
+            <span><span class="risk-badge high">VULNERABLE</span></span>
+            <span class="exposed">⚠ YES</span>
+          </div>
+          <div class="index-row">
+            <span>SDVOSB / Small Business</span>
+            <span class="score-cell high-text">45/100</span>
+            <span><span class="risk-badge high">VULNERABLE</span></span>
+            <span class="exposed">⚠ YES</span>
+          </div>
+        </div>
+        <div class="index-note">
+          All scans target publicly accessible TLS endpoints only — equivalent to what any browser does.
+          No credentials. No penetration testing. 100% passive.
+          <br/><br/>
+          <em>"No organization scanned has yet achieved quantum-ready status — consistent with
+          industry-wide findings and the early stage of the NIST PQC migration timeline."</em>
+        </div>
+        <!-- Live demo widget -->
+        <div class="live-demo-box">
+          <div class="live-demo-label">Try it — scan any domain</div>
+          <div class="live-demo-input-row">
+            <input type="text" id="domain-input" placeholder="yourdomain.com" autocomplete="off" />
+            <button id="scan-btn" class="btn-primary">Scan</button>
+          </div>
+          <div class="live-demo-result">
+            <div class="demo-score-row">
+              <span class="demo-score-num" id="score-value">—</span>
+              <div class="demo-bar-wrap">
+                <div class="demo-bar" id="score-bar"></div>
+              </div>
+              <span class="demo-risk" id="risk-label"></span>
+            </div>
+            <div class="demo-details" id="score-details"></div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary">Get Your Organization Scanned</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERAPHIM ──────────────────────────────────────────────────────────── -->
+  <section class="section seraphim-section" id="seraphim">
+    <div class="seraphim-bg"></div>
+    <div class="container">
+      <div class="seraphim-inner">
+        <div class="seraphim-left">
+          <div class="seraphim-logo-wrap">
+            <img src="assets/seraphim_logo.png" alt="Seraphim |LZ⟩" class="seraphim-logo-img" />
+          </div>
+          <div class="seraphim-name">SERAPHIM |LZ⟩</div>
+          <div class="seraphim-tag">Agents of the Highest Order</div>
+          <div class="seraphim-sub">Research Apex — Perfect Squared Ecosystem</div>
+        </div>
+        <div class="seraphim-right">
+          <h3>The Intelligence Layer</h3>
+          <p>
+            Seraphim |LZ⟩ is the quantum-native research initiative that powers QUANTA's
+            agent-based decision engine. Where classical systems follow rules, Seraphim agents
+            exist in superposition across all possible threat states — collapsing to a single
+            verdict via real quantum circuits.
+          </p>
+          <p>
+            The architecture originates from the Seraphim whitepaper — a sub-Planck symbolic
+            intelligence substrate where agents are encoded, evolved through the Seraphim Field,
+            initialized as |LZ⟩, and collapsed to truth.
+          </p>
+          <div class="seraphim-formula">
+            <code>|S⟩ = Σ αᵢ |sᵢ⟩  →  |s*⟩</code>
+            <code>P(kᵢ) ∝ exp(-Entropy(kᵢ))</code>
+            <code>D = argmax_i(I(sᵢ) - β·E(sᵢ))</code>
+          </div>
+          <div class="oss-links">
+            <div class="oss-label">Open Source — Apache 2.0</div>
+            <div class="oss-cards">
+              <a href="https://github.com/10XAnalytics/seraphim-logic-core" target="_blank" class="oss-card">
+                <div class="oss-name">seraphim-logic-core</div>
+                <div class="oss-desc">Quantum-classical hybrid symbolic agent framework</div>
+                <div class="oss-install">pip install seraphim-logic-core</div>
+              </a>
+              <a href="https://github.com/10XAnalytics/planck-agent-gateway" target="_blank" class="oss-card">
+                <div class="oss-name">planck-agent-gateway</div>
+                <div class="oss-desc">Decision routing gateway for QUANTA handlers</div>
+                <div class="oss-install">pip install planck-agent-gateway</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────────────────────── -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-left">
+          <div class="secnav-photo-wrap">
+            <img src="assets/eric_secnav.webp" alt="Eric Butler with Secretary of the Navy Ray Mabus" class="secnav-photo" />
+            <div class="secnav-caption">Eric Butler with Secretary of the Navy Ray Mabus<br/>USS Ross (DDG-71) · Rota, Spain · Veterans Day 2016</div>
+          </div>
+          <div class="about-entity">
+            <div class="entity-name">Perfect Squared Inc.</div>
+            <div class="entity-dba">Operating as P2 Labs (Defense)</div>
+            <div class="entity-vehicle">10X Analytics Worldwide LLC — Contracting Vehicle</div>
+          </div>
+          <div class="about-certs">
+            <span class="cert">SDVOSB</span>
+            <span class="cert">VSBE</span>
+            <span class="cert">CSB</span>
+            <span class="cert">SAM.gov Verified</span>
+            <span class="cert">CAGE 12GD0</span>
+            <span class="cert">UEI SFC3WHK9SSH3</span>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="section-eyebrow">Who We Are</div>
+          <h2 class="about-title">"Simulate the Future.<br/>Secure the Present."</h2>
+          <p>
+            P2 Labs is the IP origination and R&D core of the Perfect Squared ecosystem.
+            Founded by a Navy veteran who understands both the mission and the math —
+            every patent, every platform, every line of published research originates here.
+          </p>
+          <p>
+            We built QUANTA because the defense industrial base has a quantum problem and
+            nobody was making the solution accessible. The big firms charge $200K.
+            We start at $7,500 and we do the implementation too.
+          </p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="astat-num">1</div>
+              <div class="astat-label">Patent Pending<br/>USPTO #63/805,300</div>
+            </div>
+            <div class="about-stat">
+              <div class="astat-num">110</div>
+              <div class="astat-label">Open Source<br/>Tests Passing</div>
+            </div>
+            <div class="about-stat">
+              <div class="astat-num">2</div>
+              <div class="astat-label">PyPI Packages<br/>Published</div>
+            </div>
+            <div class="about-stat">
+              <div class="astat-num">$17B</div>
+              <div class="astat-label">PQC Market<br/>by 2035</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────────────────────────── -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-bg"></div>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="section-eyebrow">Get Started</div>
+          <h2 class="contact-title">Book a<br/><span class="gold">Demo</span></h2>
+          <p>20 minutes. No slides. We run QUANTA live against your endpoint and show you exactly where you stand.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="ci-label">Email</span>
+              <a href="mailto:eric.butler@10xanalyticsworldwide.io">eric.butler@10xanalyticsworldwide.io</a>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Phone</span>
+              <a href="tel:4103010325">(410) 301-0325</a>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">CAGE</span>
+              <span>12GD0</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Full Name" required />
+              <input type="text" name="company" placeholder="Organization" required />
+            </div>
+            <input type="email" name="email" placeholder="Work Email" required />
+            <input type="text" name="domain" placeholder="Domain to scan (e.g. yourcompany.com)" />
+            <select name="interest">
+              <option value="" disabled selected>What are you looking for?</option>
+              <option>PQC Assessment ($7,500)</option>
+              <option>Assessment + Remediation</option>
+              <option>Managed PQC Monitoring</option>
+              <option>SBIR / Research Partnership</option>
+              <option>Teaming Agreement</option>
+            </select>
+            <textarea name="message" placeholder="Anything else we should know?" rows="3"></textarea>
+            <button type="submit" class="btn-primary full-width">Request Demo</button>
+            <div id="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="assets/perfect_squared_logo.png" alt="Perfect Squared" class="footer-logo" />
+        </div>
+        <div>
+          <div class="footer-name">P2 LABS · Perfect Squared Inc.</div>
+          <div class="footer-tag">"Simulate the Future. Secure the Present."</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/10XAnalytics" target="_blank">GitHub</a>
+        <a href="https://pypi.org/project/seraphim-logic-core/" target="_blank">PyPI</a>
+        <a href="https://10xanalyticsworldwide.io" target="_blank">10X Analytics</a>
+        <a href="mailto:eric.butler@10xanalyticsworldwide.io">Contact</a>
+      </div>
+      <div class="footer-legal">
+        © 2026 Perfect Squared Inc. · SDVOSB · CAGE 12GD0 · UEI SFC3WHK9SSH3<br/>
+        10X Analytics Worldwide LLC — Contracting Vehicle<br/>
+        USPTO Patent Application #63/805,300
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
