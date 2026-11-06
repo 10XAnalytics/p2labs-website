@@ -1,0 +1,208 @@
+{
+ "date": "2026-11-05",
+ "scanned": 17,
+ "pq_key_exchange": 11,
+ "avg_score": 76,
+ "best_possible_today": 90,
+ "method": "One normal TLS handshake with each organization's main public website, offering the hybrid post-quantum group X25519MLKEM768. Website only; internal systems are not visible from outside.",
+ "tiers": [
+  {
+   "tier": "Top defense primes",
+   "scanned": 6,
+   "pq_key_exchange": 5,
+   "avg_score": 82
+  },
+  {
+   "tier": "Government IT & services",
+   "scanned": 6,
+   "pq_key_exchange": 3,
+   "avg_score": 70
+  },
+  {
+   "tier": "Small cyber firms / SDVOSB",
+   "scanned": 5,
+   "pq_key_exchange": 3,
+   "avg_score": 76
+  }
+ ],
+ "domains": {
+  "lockheedmartin.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "rtx.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (ECDSA-256); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "northropgrumman.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "gd.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "l3harris.com": {
+   "score": 40,
+   "rating": "CRITICAL",
+   "tls": "TLSv1.2",
+   "key_exchange": "ECDH",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (ECDH); recorded traffic can be decrypted later",
+    "-15 best protocol is TLSv1.2, not TLS 1.3",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "baesystems.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "leidos.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (ECDSA-256); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "boozallen.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "saic.com": {
+   "score": 55,
+   "rating": "VULNERABLE",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (X25519); recorded traffic can be decrypted later",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "parsons.com": {
+   "score": 55,
+   "rating": "VULNERABLE",
+   "tls": "TLSv1.3",
+   "key_exchange": "ECDH",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (ECDH); recorded traffic can be decrypted later",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "caci.com": {
+   "score": 40,
+   "rating": "CRITICAL",
+   "tls": "TLSv1.2",
+   "key_exchange": "ECDH",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (ECDH); recorded traffic can be decrypted later",
+    "-15 best protocol is TLSv1.2, not TLS 1.3",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "mantech.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (ECDSA-256); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "techguard.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (ECDSA-256); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "crestassure.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "1cyberforce.com": {
+   "score": 55,
+   "rating": "VULNERABLE",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (X25519); recorded traffic can be decrypted later",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "solielcom.com": {
+   "score": 55,
+   "rating": "VULNERABLE",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519",
+   "pq": false,
+   "reasons": [
+    "-35 no post-quantum key exchange (X25519); recorded traffic can be decrypted later",
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  },
+  "pingwind.com": {
+   "score": 90,
+   "rating": "TRANSITIONING",
+   "tls": "TLSv1.3",
+   "key_exchange": "X25519MLKEM768",
+   "pq": true,
+   "reasons": [
+    "-10 classical certificate (RSA-2048); ML-DSA certificates aren't issued by public CAs yet"
+   ]
+  }
+ }
+}

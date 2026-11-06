@@ -55,7 +55,7 @@
 
       <div class="hero-eyebrow">
         <span class="dot critical"></span>
-        NSM-10 Mandate · 2035 Deadline · Active Threat
+        Federal PQC Deadline · Dec 31, 2030 · Executive Order, June 2026
       </div>
       <h1 class="hero-headline">
         The Institute Taking the<br/>
@@ -70,12 +70,12 @@
         <div class="score-display">
           <div class="score-bar-wrap">
             <div class="score-bar-track">
-              <div class="score-bar-fill" style="width:45%"></div>
+              <div class="score-bar-fill" style="width:76%"></div>
             </div>
-            <div class="score-number">45<span>/100</span></div>
+            <div class="score-number">76<span>/100</span></div>
           </div>
-          <div class="score-verdict critical-text">VULNERABLE — HNDL EXPOSED</div>
-          <div class="score-caption">Industry average across 10 scanned defense contractors</div>
+          <div class="score-verdict high-text">6 OF 17 STILL WITHOUT POST-QUANTUM KEY EXCHANGE</div>
+          <div class="score-caption">Average across 17 defense contractor websites, November 2026. 90 is the best possible today.</div>
         </div>
       </div>
       <div class="hero-actions">
@@ -97,18 +97,18 @@
     <div class="container">
       <div class="threat-grid">
         <div class="threat-stat">
-          <div class="threat-number">100<span>%</span></div>
-          <div class="threat-label">of scanned DIB contractors are HNDL exposed</div>
+          <div class="threat-number">6<span>/17</span></div>
+          <div class="threat-label">scanned contractor websites still without post-quantum key exchange</div>
         </div>
         <div class="threat-divider"></div>
         <div class="threat-stat">
-          <div class="threat-number">2035</div>
-          <div class="threat-label">NSM-10 hard deadline for PQC migration</div>
+          <div class="threat-number">2030</div>
+          <div class="threat-label">Federal deadline for quantum-safe key exchange (signatures: 2031)</div>
         </div>
         <div class="threat-divider"></div>
         <div class="threat-stat">
-          <div class="threat-number">45<span>/100</span></div>
-          <div class="threat-label">Average QUANTA Score across the defense industrial base</div>
+          <div class="threat-number">76<span>/100</span></div>
+          <div class="threat-label">Average QUANTA Score, 17 contractor websites (Nov 2026)</div>
         </div>
         <div class="threat-divider"></div>
         <div class="threat-stat">
@@ -147,8 +147,8 @@
         <div class="threat-card">
           <div class="tc-icon">🔓</div>
           <div class="tc-name">Grover's Algorithm</div>
-          <div class="tc-desc">Halves the effective key length of symmetric encryption. AES-128 becomes effectively AES-64. Symmetric systems need to double their key lengths.</div>
-          <div class="tc-status high-text">HIGH</div>
+          <div class="tc-desc">Speeds up brute-force search of symmetric keys, but far less than Shor's breaks RSA. NIST still considers AES-128 secure; AES-256 gives extra margin for long-lived secrets.</div>
+          <div class="tc-status">LOW</div>
         </div>
         <div class="threat-card">
           <div class="tc-icon">📜</div>
@@ -174,7 +174,7 @@
         <div class="quanta-left">
           <div class="quanta-what">
             <h3>What QUANTA does</h3>
-            <p>QUANTA scans your TLS endpoints, certificates, source code, and dependencies against NIST FIPS 203/204/205 standards. Same day — you get a full audit-ready report, a Cryptographic Bill of Materials, and a remediation roadmap.</p>
+            <p>QUANTA's Squared Away scanner checks your websites and servers, certificates, SSH keys, and source code for encryption that quantum computers will break, mapped to NIST FIPS 203/204/205. Read-only and offline: nothing leaves your network. Same day, you get a plain-English report, a Cryptographic Bill of Materials, and a remediation roadmap.</p>
           </div>
           <div class="deliverables">
             <div class="deliverable">
@@ -188,7 +188,7 @@
               <span class="del-icon">✓</span>
               <div>
                 <strong>Cryptographic Bill of Materials</strong>
-                <span>CycloneDX v1.6 — CISA/NSA accepted format</span>
+                <span>CycloneDX 1.6 (ECMA-424), the industry-standard CBOM format</span>
               </div>
             </div>
             <div class="deliverable">
@@ -236,6 +236,13 @@
           <div class="products-stack">
             <div class="product-card">
               <div class="prod-header">
+                <span class="prod-name">QUANTA Squared Away</span>
+                <span class="prod-badge active">AVAILABLE</span>
+              </div>
+              <p>Quantum-readiness scanner. Finds RSA, elliptic-curve, and weak-today crypto across servers, certificates, SSH, and code; ranks fixes against the 2030/2031 deadlines; outputs a CycloneDX CBOM and the QUANTA Score.</p>
+            </div>
+            <div class="product-card">
+              <div class="prod-header">
                 <span class="prod-name">QUANTA-PULSE</span>
                 <span class="prod-badge patent">PATENT PENDING</span>
               </div>
@@ -274,62 +281,52 @@
       <div class="section-eyebrow">Intelligence</div>
       <h2 class="section-title">QUANTA Threat Index</h2>
       <p class="section-sub">
-        Every quarter, P2 Labs scans the public TLS infrastructure of defense contractors
-        and publishes the findings. No company is singled out — this is an industry baseline.
-        The data speaks for itself.
+        P2 Labs scans the public websites of defense contractors with one normal TLS handshake,
+        the same thing a browser does, and publishes the results by tier. Every score is explained.
       </p>
       <div class="index-findings">
         <div class="finding-headline">
-          Q2 2026 — Initial Scan: 10 Defense Contractors
+          November 2026 — 17 Defense Contractor Websites
         </div>
         <div class="index-table">
           <div class="index-row header">
             <span>Organization Tier</span>
-            <span>QUANTA Score</span>
-            <span>Risk Level</span>
-            <span>HNDL Exposed</span>
+            <span>Avg QUANTA Score</span>
+            <span>Rating</span>
+            <span>Post-Quantum Key Exchange</span>
           </div>
           <div class="index-row">
-            <span>Major Defense Prime ($7B+)</span>
-            <span class="score-cell critical-text">35/100</span>
-            <span><span class="risk-badge critical">CRITICAL</span></span>
-            <span class="exposed">⚠ YES</span>
-          </div>
-          <div class="index-row">
-            <span>Mid-Tier Prime</span>
-            <span class="score-cell high-text">40/100</span>
+            <span>Top defense primes</span>
+            <span class="score-cell high-text">82/100</span>
             <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">⚠ YES</span>
+            <span>5 of 6</span>
           </div>
           <div class="index-row">
-            <span>Cybersecurity Services</span>
-            <span class="score-cell high-text">45/100</span>
+            <span>Government IT &amp; services</span>
+            <span class="score-cell high-text">70/100</span>
             <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">⚠ YES</span>
+            <span class="exposed">3 of 6</span>
           </div>
           <div class="index-row">
-            <span>IT Services / RMF</span>
-            <span class="score-cell high-text">45/100</span>
+            <span>Small cyber firms / SDVOSB</span>
+            <span class="score-cell high-text">76/100</span>
             <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">⚠ YES</span>
-          </div>
-          <div class="index-row">
-            <span>SDVOSB / Small Business</span>
-            <span class="score-cell high-text">45/100</span>
-            <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">⚠ YES</span>
+            <span class="exposed">3 of 5</span>
           </div>
         </div>
         <div class="index-note">
-          All scans target publicly accessible TLS endpoints only — equivalent to what any browser does.
-          No credentials. No penetration testing. 100% passive.
+          Public websites only. No credentials, no penetration testing, 100% passive.
+          90/100 is the best possible score today, because public certificate authorities
+          don't issue post-quantum certificates yet.
           <br/><br/>
-          <em>"No organization scanned has yet achieved quantum-ready status — consistent with
-          industry-wide findings and the early stage of the NIST PQC migration timeline."</em>
+          <strong>What the website doesn't show:</strong> many of these sites got post-quantum key exchange
+          automatically from their hosting or CDN provider. VPNs, email, file transfer, internal apps,
+          and code don't get that upgrade for free, and they can't be seen from outside.
+          That's what a full QUANTA assessment covers.
         </div>
-        <!-- Live demo widget -->
+        <!-- Live lookup widget: real results from data/quanta-index.json -->
         <div class="live-demo-box">
-          <div class="live-demo-label">Try it — scan any domain</div>
+          <div class="live-demo-label">Look up a scanned domain</div>
           <div class="live-demo-input-row">
             <input type="text" id="domain-input" placeholder="yourdomain.com" autocomplete="off" />
             <button id="scan-btn" class="btn-primary">Scan</button>
@@ -465,8 +462,8 @@
   <section class="section team-section" id="team">
     <div class="container">
       <div class="section-eyebrow">Leadership & Research</div>
-      <h2 class="section-title">The <span class="gold">P2 Labs</span> Institute Team</h2>
-      <p class="section-sub-sm">Built to lead the post-quantum era. Organized across four divisions — research, technology, federal programs, and security intelligence.</p>
+      <h2 class="section-title">The <span class="gold">P2 Labs</span> Team</h2>
+      <p class="section-sub-sm">Founder-led today. These are the roles we are building toward across research, technology, federal programs, and security intelligence.</p>
 
       <!-- Office of the Founder -->
       <div class="team-division">
@@ -497,32 +494,24 @@
         </div>
         <div class="team-grid">
           <div class="team-card">
-            <div class="team-avatar">AO</div>
-            <div class="team-name">Dr. Amara Osei</div>
-            <div class="team-title">Director of Post-Quantum Research</div>
+            <div class="team-name">Director of Post-Quantum Research</div>
             <div class="team-div-badge research">Research Division</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">KW</div>
-            <div class="team-name">Kenji Watanabe</div>
-            <div class="team-title">Lead Cryptographic Engineer</div>
+            <div class="team-name">Lead Cryptographic Engineer</div>
             <div class="team-div-badge research">Research Division</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">PS</div>
-            <div class="team-name">Priya Sharma</div>
-            <div class="team-title">Seraphim |LZ⟩ Research Lead</div>
+            <div class="team-name">Seraphim |LZ⟩ Research Lead</div>
             <div class="team-div-badge research">Research Division</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">TE</div>
-            <div class="team-name">Tobias Engel</div>
-            <div class="team-title">Quantum Algorithm Analyst</div>
+            <div class="team-name">Quantum Algorithm Analyst</div>
             <div class="team-div-badge research">Research Division</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
         </div>
       </div>
@@ -535,32 +524,24 @@
         </div>
         <div class="team-grid">
           <div class="team-card">
-            <div class="team-avatar">MR</div>
-            <div class="team-name">Marcus Reid</div>
-            <div class="team-title">Chief Technology Officer</div>
+            <div class="team-name">Chief Technology Officer</div>
             <div class="team-div-badge tech">Applied Technology</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">SN</div>
-            <div class="team-name">Sofia Nakamura</div>
-            <div class="team-title">QUANTA Platform Architect</div>
+            <div class="team-name">QUANTA Platform Architect</div>
             <div class="team-div-badge tech">Applied Technology</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">DW</div>
-            <div class="team-name">Devon Walsh</div>
-            <div class="team-title">Director of Compliance Engineering</div>
+            <div class="team-name">Director of Compliance Engineering</div>
             <div class="team-div-badge tech">Applied Technology</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">ZC</div>
-            <div class="team-name">Zara Chen</div>
-            <div class="team-title">Systems Integration Engineer</div>
+            <div class="team-name">Systems Integration Engineer</div>
             <div class="team-div-badge tech">Applied Technology</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
         </div>
       </div>
@@ -573,25 +554,19 @@
         </div>
         <div class="team-grid">
           <div class="team-card">
-            <div class="team-avatar">JH</div>
-            <div class="team-name">James Harrington</div>
-            <div class="team-title">Director of Federal Programs</div>
+            <div class="team-name">Director of Federal Programs</div>
             <div class="team-div-badge federal">Federal Programs</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">AB</div>
-            <div class="team-name">Aaliya Brooks</div>
-            <div class="team-title">SBIR Program Manager</div>
+            <div class="team-name">SBIR Program Manager</div>
             <div class="team-div-badge federal">Federal Programs</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">CF</div>
-            <div class="team-name">Claire Fontaine</div>
-            <div class="team-title">Contracts &amp; Acquisitions Officer</div>
+            <div class="team-name">Contracts &amp; Acquisitions Officer</div>
             <div class="team-div-badge federal">Federal Programs</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
         </div>
       </div>
@@ -604,25 +579,19 @@
         </div>
         <div class="team-grid">
           <div class="team-card">
-            <div class="team-avatar">VO</div>
-            <div class="team-name">Victor Okafor</div>
-            <div class="team-title">Chief Information Security Officer</div>
+            <div class="team-name">Chief Information Security Officer</div>
             <div class="team-div-badge security">Security &amp; Intelligence</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">IL</div>
-            <div class="team-name">Ingrid Larsson</div>
-            <div class="team-title">Director of Threat Intelligence</div>
+            <div class="team-name">Director of Threat Intelligence</div>
             <div class="team-div-badge security">Security &amp; Intelligence</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
           <div class="team-card">
-            <div class="team-avatar">RM</div>
-            <div class="team-name">Ravi Mehta</div>
-            <div class="team-title">Intelligence Systems Analyst</div>
+            <div class="team-name">Intelligence Systems Analyst</div>
             <div class="team-div-badge security">Security &amp; Intelligence</div>
-            <div class="team-open">Position Open</div>
+            <div class="team-open">Open role</div>
           </div>
         </div>
       </div>

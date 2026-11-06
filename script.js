@@ -8,7 +8,7 @@
 const nav = document.getElementById('nav');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 // Smooth scroll for nav links
@@ -49,19 +49,14 @@ const scoreBar      = document.getElementById('score-bar');
 const riskLabel     = document.getElementById('risk-label');
 const scoreDetails  = document.getElementById('score-details');
 
-const DEMO_RESULTS = {
-  // Real scan data from Session 2
-  'saic.com':            { score: 35, risk: 'CRITICAL',   ke: 'RSA-2048', proto: 'TLS 1.2', hndl: true },
-  'caci.com':            { score: 40, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.2', hndl: true },
-  'leidos.com':          { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P384', proto: 'TLS 1.3', hndl: true },
-  'boozallen.com':       { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-  'mantech.com':         { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-  'techguard.com':       { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-  'crestassure.com':     { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-  '1cyberforce.com':     { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P384', proto: 'TLS 1.3', hndl: true },
-  'solielcom.com':       { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-  'pingwind.com':        { score: 45, risk: 'VULNERABLE',  ke: 'ECDH-P256', proto: 'TLS 1.3', hndl: true },
-};
+// Real results from the latest QUANTA Threat Index run (p2labs-intel/export_index.py).
+let INDEX = null;
+fetch('data/quanta-index.json')
+  .then(r => r.ok ? r.json() : null)
+  .then(d => { INDEX = d; })
+  .catch(() => {});
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const RISK_COLORS = {
   'CRITICAL':      '#ef4444',
@@ -89,11 +84,11 @@ function animateScore(target) {
 }
 
 function runDemo(domain) {
-  const key = domain.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '');
-  const data = DEMO_RESULTS[key];
+  const key = domain.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+  const data = INDEX && INDEX.domains ? INDEX.domains[key] : null;
 
   scanBtn.disabled = true;
-  scanBtn.textContent = 'Scanning...';
+  scanBtn.textContent = 'Looking up...';
 
   // Reset
   scoreValue.textContent = '0';
@@ -103,39 +98,36 @@ function runDemo(domain) {
 
   setTimeout(() => {
     if (data) {
-      const color = RISK_COLORS[data.risk] || '#888';
+      const color = RISK_COLORS[data.rating] || '#888';
       scoreBar.style.background = color;
-      riskLabel.textContent = `${RISK_ICONS[data.risk] || ''} ${data.risk}`;
+      riskLabel.textContent = `${RISK_ICONS[data.rating] || ''} ${data.rating}`;
       riskLabel.style.color = color;
 
       animateScore(data.score);
 
-      const hndlLine = data.hndl
-        ? '<span style="color:var(--critical)">⚠ HNDL EXPOSED — quantum-harvestable traffic</span>'
-        : '<span style="color:#22c55e">✅ HNDL: Not exposed</span>';
+      const pqLine = data.pq
+        ? '<span style="color:#22c55e">✅ Post-quantum key exchange in use</span>'
+        : '<span style="color:var(--critical)">⚠ No post-quantum key exchange — recorded traffic could be decrypted later</span>';
+      const why = (data.reasons || []).map(r => `<div class="score-detail-row"><span>${esc(r)}</span></div>`).join('');
 
       scoreDetails.innerHTML = `
-        <div class="score-detail-row"><span>Key Exchange</span><span>${data.ke}</span></div>
-        <div class="score-detail-row"><span>Protocol</span><span>${data.proto}</span></div>
-        <div class="score-detail-row"><span>PQC Algorithms</span><span style="color:var(--critical)">None detected</span></div>
-        <div class="score-detail-row">${hndlLine}</div>
-        <div class="score-detail-note">Full assessment available — <a href="#contact">contact us</a></div>
+        <div class="score-detail-row"><span>Key Exchange</span><span>${esc(data.key_exchange)}</span></div>
+        <div class="score-detail-row"><span>Protocol</span><span>${esc(data.tls)}</span></div>
+        <div class="score-detail-row">${pqLine}</div>
+        ${why}
+        <div class="score-detail-note">Website only, scanned ${esc(INDEX.date)}. Internal systems need a full assessment — <a href="#contact">contact us</a>.</div>
       `;
     } else {
-      // Generic result for unknown domains
-      const score = Math.floor(Math.random() * 15) + 35; // 35-50 — realistic baseline
-      scoreBar.style.background = score < 40 ? RISK_COLORS.CRITICAL : RISK_COLORS.VULNERABLE;
-      riskLabel.textContent = score < 40 ? '🔴 CRITICAL' : '🟠 VULNERABLE';
-      riskLabel.style.color = score < 40 ? RISK_COLORS.CRITICAL : RISK_COLORS.VULNERABLE;
-
-      animateScore(score);
-
+      // Not in the index: never show a made-up score.
+      scoreBar.style.background = '#888';
+      riskLabel.textContent = '';
+      scoreValue.textContent = '—';
       scoreDetails.innerHTML = `
-        <div class="score-detail-row"><span>Key Exchange</span><span>ECDH-P256 (classical)</span></div>
-        <div class="score-detail-row"><span>PQC Algorithms</span><span style="color:var(--critical)">None detected</span></div>
-        <div class="score-detail-row"><span style="color:var(--critical)">⚠ HNDL EXPOSED — quantum-harvestable traffic</span></div>
-        <div class="score-detail-note">This is a demo result. <a href="#contact">Request a full scan.</a></div>
+        <div class="score-detail-row"><span>${esc(key)} isn't in the published index yet.</span></div>
+        <div class="score-detail-note">We'll check it for free and send you the real result. <a href="#contact">Request a free website check.</a></div>
       `;
+      const d = document.querySelector('#contact-form input[name="domain"]');
+      if (d) d.value = key;
     }
 
     scanBtn.disabled = false;
@@ -175,12 +167,14 @@ if (contactForm) {
       email:   contactForm.email.value,
       company: contactForm.company.value,
       message: contactForm.message.value,
+      domain:  contactForm.domain.value,
+      interest: contactForm.interest.value,
     };
 
     // Mailto fallback — works without a backend
     const subject  = encodeURIComponent(`QUANTA Assessment Request — ${data.company}`);
     const body     = encodeURIComponent(
-      `Name: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\n\n${data.message}`
+      `Name: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\nDomain: ${data.domain}\nInterest: ${data.interest}\n\n${data.message}`
     );
     const mailto   = `mailto:eric.butler@10xanalyticsworldwide.io?subject=${subject}&body=${body}`;
 
