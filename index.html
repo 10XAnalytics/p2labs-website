@@ -25,7 +25,7 @@
       </div>
       <div class="nav-links">
         <a href="#quanta">QUANTA</a>
-        <a href="#threat-index">Threat Index</a>
+        <a href="#threat-index">Free Check</a>
         <a href="#seraphim">Seraphim</a>
         <a href="#about">About</a>
         <a href="#team">Team</a>
@@ -70,12 +70,12 @@
         <div class="score-display">
           <div class="score-bar-wrap">
             <div class="score-bar-track">
-              <div class="score-bar-fill" style="width:76%"></div>
+              <div class="score-bar-fill" style="width:90%"></div>
             </div>
-            <div class="score-number">76<span>/100</span></div>
+            <div class="score-number">90<span>/100</span></div>
           </div>
-          <div class="score-verdict high-text">6 OF 17 STILL WITHOUT POST-QUANTUM KEY EXCHANGE</div>
-          <div class="score-caption">Average across 17 defense contractor websites, November 2026. 90 is the best possible today.</div>
+          <div class="score-verdict high-text">THE BEST ANY WEBSITE CAN SCORE TODAY. WHERE ARE YOU?</div>
+          <div class="score-caption">Public certificate authorities don't issue post-quantum certificates yet, so 90 is the ceiling.</div>
         </div>
       </div>
       <div class="hero-actions">
@@ -97,18 +97,18 @@
     <div class="container">
       <div class="threat-grid">
         <div class="threat-stat">
-          <div class="threat-number">6<span>/17</span></div>
-          <div class="threat-label">scanned contractor websites still without post-quantum key exchange</div>
-        </div>
-        <div class="threat-divider"></div>
-        <div class="threat-stat">
           <div class="threat-number">2030</div>
-          <div class="threat-label">Federal deadline for quantum-safe key exchange (signatures: 2031)</div>
+          <div class="threat-label">Federal deadline for quantum-safe key exchange</div>
         </div>
         <div class="threat-divider"></div>
         <div class="threat-stat">
-          <div class="threat-number">76<span>/100</span></div>
-          <div class="threat-label">Average QUANTA Score, 17 contractor websites (Nov 2026)</div>
+          <div class="threat-number">2031</div>
+          <div class="threat-label">Federal deadline for quantum-safe signatures</div>
+        </div>
+        <div class="threat-divider"></div>
+        <div class="threat-stat">
+          <div class="threat-number">2027</div>
+          <div class="threat-label">NIST &amp; CISA required CBOM contents due (Executive Order, June 2026)</div>
         </div>
         <div class="threat-divider"></div>
         <div class="threat-stat">
@@ -275,79 +275,79 @@
     </div>
   </section>
 
-  <!-- ── THREAT INDEX ──────────────────────────────────────────────────────── -->
+  <!-- ── QUANTA SCORE / FREE CHECK ─────────────────────────────────────────── -->
   <section class="section threat-index-section" id="threat-index">
     <div class="container">
-      <div class="section-eyebrow">Intelligence</div>
-      <h2 class="section-title">QUANTA Threat Index</h2>
+      <div class="section-eyebrow">Free Check</div>
+      <h2 class="section-title">Your QUANTA Score</h2>
       <p class="section-sub">
-        P2 Labs scans the public websites of defense contractors with one normal TLS handshake,
-        the same thing a browser does, and publishes the results by tier. Every score is explained.
+        One number, 0 to 100, for how ready your public systems are for quantum computers.
+        Every point is explained, so you know exactly what to fix.
       </p>
       <div class="index-findings">
-        <div class="finding-headline">
-          November 2026 — 17 Defense Contractor Websites
-        </div>
+        <div class="finding-headline">How the score works (websites and servers)</div>
         <div class="index-table">
           <div class="index-row header">
-            <span>Organization Tier</span>
-            <span>Avg QUANTA Score</span>
-            <span>Rating</span>
-            <span>Post-Quantum Key Exchange</span>
+            <span>What we check</span>
+            <span>Points</span>
+            <span>Why it matters</span>
+            <span>Fix</span>
           </div>
           <div class="index-row">
-            <span>Top defense primes</span>
-            <span class="score-cell high-text">82/100</span>
-            <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span>5 of 6</span>
+            <span>Post-quantum key exchange (ML-KEM hybrid)</span>
+            <span class="score-cell high-text">−35</span>
+            <span>Traffic recorded today can be decrypted later</span>
+            <span>Server or CDN setting</span>
           </div>
           <div class="index-row">
-            <span>Government IT &amp; services</span>
-            <span class="score-cell high-text">70/100</span>
-            <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">3 of 6</span>
+            <span>TLS 1.3 available</span>
+            <span class="score-cell high-text">−15</span>
+            <span>Post-quantum key exchange needs TLS 1.3</span>
+            <span>Server update</span>
           </div>
           <div class="index-row">
-            <span>Small cyber firms / SDVOSB</span>
-            <span class="score-cell high-text">76/100</span>
-            <span><span class="risk-badge high">VULNERABLE</span></span>
-            <span class="exposed">3 of 5</span>
+            <span>Old TLS 1.0 / 1.1 turned off</span>
+            <span class="score-cell high-text">−15</span>
+            <span>Retired protocols with known weaknesses</span>
+            <span>Server setting</span>
+          </div>
+          <div class="index-row">
+            <span>Certificate strong today</span>
+            <span class="score-cell high-text">−15</span>
+            <span>RSA under 2048 or SHA-1 can be attacked now</span>
+            <span>Reissue certificate</span>
+          </div>
+          <div class="index-row">
+            <span>Certificate trusted by browsers</span>
+            <span class="score-cell high-text">−10</span>
+            <span>Untrusted certificates invite interception</span>
+            <span>Free trusted certificate</span>
+          </div>
+          <div class="index-row">
+            <span>Post-quantum certificate</span>
+            <span class="score-cell high-text">−10</span>
+            <span>Not issued by public authorities yet, so 90 is today's best</span>
+            <span>Plan for ML-DSA</span>
           </div>
         </div>
         <div class="index-note">
-          Public websites only. No credentials, no penetration testing, 100% passive.
-          90/100 is the best possible score today, because public certificate authorities
-          don't issue post-quantum certificates yet.
+          A website check is 100% passive: one normal connection, the same thing a browser does.
           <br/><br/>
-          <strong>What the website doesn't show:</strong> many of these sites got post-quantum key exchange
-          automatically from their hosting or CDN provider. VPNs, email, file transfer, internal apps,
-          and code don't get that upgrade for free, and they can't be seen from outside.
-          That's what a full QUANTA assessment covers.
+          <strong>What a website can't show:</strong> many sites get post-quantum key exchange automatically
+          from their hosting or CDN provider. VPNs, email, file transfer, internal apps, and code don't get
+          that upgrade for free, and they can't be seen from outside. That's what a full QUANTA assessment covers.
         </div>
-        <!-- Live lookup widget: real results from data/quanta-index.json -->
         <div class="live-demo-box">
-          <div class="live-demo-label">Look up a scanned domain</div>
+          <div class="live-demo-label">Request your free website check</div>
           <div class="live-demo-input-row">
             <input type="text" id="domain-input" placeholder="yourdomain.com" autocomplete="off" />
-            <button id="scan-btn" class="btn-primary">Scan</button>
+            <button id="scan-btn" class="btn-primary">Request</button>
           </div>
-          <div class="live-demo-result">
-            <div class="demo-score-row">
-              <span class="demo-score-num" id="score-value">—</span>
-              <div class="demo-bar-wrap">
-                <div class="demo-bar" id="score-bar"></div>
-              </div>
-              <span class="demo-risk" id="risk-label"></span>
-            </div>
-            <div class="demo-details" id="score-details"></div>
-          </div>
+          <div class="demo-details" id="score-details"></div>
         </div>
-
-        <a href="#contact" class="btn-primary">Get Your Organization Scanned</a>
       </div>
     </div>
   </section>
-
   <!-- ── SERAPHIM ──────────────────────────────────────────────────────────── -->
   <section class="section seraphim-section" id="seraphim">
     <div class="seraphim-bg"></div>
@@ -633,6 +633,7 @@
             <input type="text" name="domain" placeholder="Domain to scan (e.g. yourcompany.com)" />
             <select name="interest">
               <option value="" disabled selected>What are you looking for?</option>
+              <option>Free website check</option>
               <option>PQC Assessment ($7,500)</option>
               <option>Assessment + Remediation</option>
               <option>Managed PQC Monitoring</option>

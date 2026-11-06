@@ -40,117 +40,40 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ── Live QUANTA Score Demo ────────────────────────────────────────────────────
+// ── Free website check request ───────────────────────────────────────────────
+// Fills the domain into the contact form. Nothing is scanned or scored in the browser.
 
-const domainInput   = document.getElementById('domain-input');
-const scanBtn       = document.getElementById('scan-btn');
-const scoreValue    = document.getElementById('score-value');
-const scoreBar      = document.getElementById('score-bar');
-const riskLabel     = document.getElementById('risk-label');
-const scoreDetails  = document.getElementById('score-details');
-
-// Real results from the latest QUANTA Threat Index run (p2labs-intel/export_index.py).
-let INDEX = null;
-fetch('data/quanta-index.json')
-  .then(r => r.ok ? r.json() : null)
-  .then(d => { INDEX = d; })
-  .catch(() => {});
+const domainInput  = document.getElementById('domain-input');
+const scanBtn      = document.getElementById('scan-btn');
+const scoreDetails = document.getElementById('score-details');
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const RISK_COLORS = {
-  'CRITICAL':      '#ef4444',
-  'VULNERABLE':    '#f97316',
-  'TRANSITIONING': '#eab308',
-  'QUANTUM-READY': '#22c55e',
-};
-
-const RISK_ICONS = {
-  'CRITICAL':      '🔴',
-  'VULNERABLE':    '🟠',
-  'TRANSITIONING': '🟡',
-  'QUANTUM-READY': '✅',
-};
-
-function animateScore(target) {
-  let current = 0;
-  const step = Math.max(1, Math.floor(target / 40));
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    scoreValue.textContent = current;
-    scoreBar.style.width = current + '%';
-    if (current >= target) clearInterval(timer);
-  }, 20);
-}
-
-function runDemo(domain) {
+function requestCheck(domain) {
   const key = domain.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-  const data = INDEX && INDEX.domains ? INDEX.domains[key] : null;
-
-  scanBtn.disabled = true;
-  scanBtn.textContent = 'Looking up...';
-
-  // Reset
-  scoreValue.textContent = '0';
-  scoreBar.style.width = '0%';
-  riskLabel.textContent = '';
-  scoreDetails.innerHTML = '';
-
-  setTimeout(() => {
-    if (data) {
-      const color = RISK_COLORS[data.rating] || '#888';
-      scoreBar.style.background = color;
-      riskLabel.textContent = `${RISK_ICONS[data.rating] || ''} ${data.rating}`;
-      riskLabel.style.color = color;
-
-      animateScore(data.score);
-
-      const pqLine = data.pq
-        ? '<span style="color:#22c55e">✅ Post-quantum key exchange in use</span>'
-        : '<span style="color:var(--critical)">⚠ No post-quantum key exchange — recorded traffic could be decrypted later</span>';
-      const why = (data.reasons || []).map(r => `<div class="score-detail-row"><span>${esc(r)}</span></div>`).join('');
-
-      scoreDetails.innerHTML = `
-        <div class="score-detail-row"><span>Key Exchange</span><span>${esc(data.key_exchange)}</span></div>
-        <div class="score-detail-row"><span>Protocol</span><span>${esc(data.tls)}</span></div>
-        <div class="score-detail-row">${pqLine}</div>
-        ${why}
-        <div class="score-detail-note">Website only, scanned ${esc(INDEX.date)}. Internal systems need a full assessment — <a href="#contact">contact us</a>.</div>
-      `;
-    } else {
-      // Not in the index: never show a made-up score.
-      scoreBar.style.background = '#888';
-      riskLabel.textContent = '';
-      scoreValue.textContent = '—';
-      scoreDetails.innerHTML = `
-        <div class="score-detail-row"><span>${esc(key)} isn't in the published index yet.</span></div>
-        <div class="score-detail-note">We'll check it for free and send you the real result. <a href="#contact">Request a free website check.</a></div>
-      `;
-      const d = document.querySelector('#contact-form input[name="domain"]');
-      if (d) d.value = key;
-    }
-
-    scanBtn.disabled = false;
-    scanBtn.textContent = 'Scan';
-  }, 1800);
+  const field = document.querySelector('#contact-form input[name="domain"]');
+  const interest = document.querySelector('#contact-form select[name="interest"]');
+  if (field) field.value = key;
+  if (interest) interest.value = 'Free website check';
+  if (scoreDetails) {
+    scoreDetails.innerHTML = `<div class="score-detail-note">Added <b>${esc(key)}</b> to the form below. Add your name and email and we'll send your QUANTA Score with every point explained.</div>`;
+  }
+  const contact = document.getElementById('contact');
+  if (contact) contact.scrollIntoView({ behavior: 'smooth' });
 }
 
 if (scanBtn) {
   scanBtn.addEventListener('click', () => {
     const val = domainInput.value.trim();
-    if (val) runDemo(val);
+    if (val) requestCheck(val);
   });
-
   domainInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
       const val = domainInput.value.trim();
-      if (val) runDemo(val);
+      if (val) requestCheck(val);
     }
   });
 }
-
-// ── Contact Form ──────────────────────────────────────────────────────────────
-
 const contactForm = document.getElementById('contact-form');
 const formStatus  = document.getElementById('form-status');
 
